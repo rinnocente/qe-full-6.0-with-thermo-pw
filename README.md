@@ -1,8 +1,8 @@
 
 # qe-full-6.0 + thermo_pw
-Quantum Espresso 6.0  + thermo_pw in one container
+Quantum Espresso 6.0  + thermo_pw in one image
 
-This container  :
+This image  :
 - uses an Ubuntu 16.10 base image and therefore gfortran-6
 - it is built taking directly the sources from the official QE repositories and compiling them with gfortran-6 during the docker build phase 
 - it takes also the the thermo_pw sources and compiles them in their QE subdir
