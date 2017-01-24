@@ -4,7 +4,8 @@ Quantum Espresso 6.0  + thermo_pw in one image
 
 This image  :
 - uses the qe-full-6.0 image as a base
-- it is built taking directly the sources from the official thermo-pw repository and compiling them with gfortran-6 during the docker build phase 
+- it is built taking directly the sources from the official thermo-pw repository and compiling them with gfortran-6 during the docker build phase
+- it installs **gv** to display postscript files
 
 Thermo-pw produces graphics with gnuplot and therefore it requires the -X option of ssh to
 get them .
