@@ -3,9 +3,11 @@
 Quantum Espresso 6.0  + thermo_pw in one image
 
 This image  :
-- uses an Ubuntu 16.10 base image and therefore gfortran-6
-- it is built taking directly the sources from the official QE repositories and compiling them with gfortran-6 during the docker build phase 
-- it takes also the the thermo_pw sources and compiles them in their QE subdir
+- uses the qe-full-6.0 image as a base
+- it is built taking directly the sources from the official thermo-pw repository and compiling them with gfortran-6 during the docker build phase 
+
+Thermo-pw produces graphics with gnuplot and therefore it requires the -X option of ssh to
+get them .
 
 
 **Quantum Espresso** is a widely used package for electronic structure calculations.
@@ -24,7 +26,7 @@ in this way (-P) the std ssh port (=22) is mapped on a free port of the host. We
 ```
 
   $ PORT=`docker port $CONT 22 |sed -e 's#.*:##'`
-  $ ssh -p $PORT qe@127.0.0.1
+  $ ssh -p $PORT -X qe@127.0.0.1
 ```
 the initial password for the 'qe' user is 'mammamia', don't forget to change it immediately.
 
@@ -43,7 +45,7 @@ and when you run the container you share this directory with the container as a 
 
  $ CONT=`docker run -v ~/qe-in-out:/home/qe/qe-in-out -P -d -t rinnocente/qe-full-6.0`
  $ PORT=`docker port $CONT|sed -e 's#.*:##'`
- $ ssh -p $PORT qe@127.0.0.1
+ $ ssh -p $PORT -X qe@127.0.0.1
 ```
 ---
 The container does not die when you logout the ssh session because it is backgrounded.
