@@ -8,6 +8,7 @@ This image  :
 
 Thermo-pw produces graphics with gnuplot and therefore it requires the -X option of ssh to
 get them .
+Use **gv** to display postscript files.
 
 
 **Quantum Espresso** is a widely used package for electronic structure calculations.
