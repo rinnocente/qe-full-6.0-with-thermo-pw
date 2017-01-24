@@ -14,6 +14,9 @@ get them .
 
 Further information is  available on its website : [www.quantum-espresso.org](http://www.quantum-espresso.org/).
 
+**themo_pw** is described and sourced at :
+[thermo_pw](http://qeforge.qe-forge.org/gf/project/thermo_pw/) .
+
 ---
 
 This image is for a **QE** container that is reachable through ssh.
