@@ -17,11 +17,14 @@ RUN sed -i 's#^all: thermo_pw.*#all: thermo_pw#' qe-6.0/thermo_pw/Makefile
 #
 WORKDIR /home/qe/qe-6.0/thermo_pw
 #
+#
 RUN make join_qe \
     && cd .. \
     && make thermo_pw \
     && chown -R qe:qe thermo_pw
+# to display postscript files
+RUN apt -yq install gv
+#
 EXPOSE 22
-RUN service ssh restart
 CMD [ "/usr/sbin/sshd","-D" ]
 #
