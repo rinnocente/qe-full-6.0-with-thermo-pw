@@ -17,6 +17,8 @@ Further information is  available on its website : [www.quantum-espresso.org](ht
 **themo_pw** is described and sourced at :
 [thermo_pw](http://qeforge.qe-forge.org/gf/project/thermo_pw/) .
 
+More info on docker installation for running QE available at [http://people.sissa.it/%7Einno/pubs/easiest_way_to_run_qe.html](http://people.sissa.it/%7Einno/pubs/easiest_way_to_run_qe.html)
+
 ---
 
 ### Only local access allowed :
