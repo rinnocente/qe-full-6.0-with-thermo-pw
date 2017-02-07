@@ -23,7 +23,7 @@ More info on docker installation for running QE available at [http://people.siss
 
 ### Only local access allowed :
 
-You can use locally the container without logging in  typing :
+You can use locally the container without logging in  typing (you can't use X in this way) :
 
 ```
 $ docker run -it -u qe rinnocente/qe-full-6.0 /bin/bash
@@ -32,7 +32,7 @@ $ docker run -it -u qe rinnocente/qe-full-6.0 /bin/bash
 in this way you will be inside the container as user ```qe```. 
 
 ### Also remote access via **ssh** :
-If you want to access directly the container from outside your machine or you want to share the container with collaborators, then you have to start it in background with a running **sshd** .
+If you want to run X apps, access directly the container from outside your machine or you want to share the container with collaborators, then you have to start it in background with a running **sshd** .
 
 You can run the container in background  with **sshd** typing :
 ```
@@ -44,8 +44,7 @@ in this way (-P) the std ssh port (=22) is mapped on a free port of the host. We
   $ PORT=`docker port $CONT 22 |sed -e 's#.*:##'`
   $ ssh -p $PORT -X qe@127.0.0.1
 ```
-Change the password
-that initially is set to *mammamia* , with the **passwd** command.
+Change the password that initially is set to *mammamia* , with the **passwd** command.
 
 The **QE** container has the  full QuantumEspresso distribution plus binaries, and parallel binaries.
 As with smaller images it still has the files for a quick test.
